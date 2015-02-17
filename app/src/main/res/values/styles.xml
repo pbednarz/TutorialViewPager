@@ -5,6 +5,7 @@
         <item name="colorPrimary">@color/primary</item>
         <item name="colorPrimaryDark">@color/primary_dark</item>
         <item name="colorAccent">@color/accent</item>
+        <item name="vpiCirclePageIndicatorStyle">@style/AppTheme.CirclePageIndicator</item>
     </style>
 
     <style name="AppTheme.Fullscreen">
@@ -13,5 +14,13 @@
         <item name="android:windowFullscreen">true</item>
     </style>
 
+    <style name="AppTheme.CirclePageIndicator">
+        <item name="fillColor">#A0FFFFFF</item>
+        <item name="pageColor">#20000000</item>
+        <item name="strokeWidth">0dp</item>
+        <item name="radius">6dp</item>
+        <item name="centered">true</item>
+        <item name="snap">true</item>
+    </style>
 
 </resources>

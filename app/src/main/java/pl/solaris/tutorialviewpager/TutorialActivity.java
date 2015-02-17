@@ -10,60 +10,72 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 
+import com.viewpagerindicator.CirclePageIndicator;
+
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
-import pl.solaris.tutorialviewpager.view.CircleIndicator;
+import pl.solaris.tutorialviewpager.view.SmoothBackground;
+import pl.solaris.tutorialviewpager.view.ViewPagerCustomDuration;
 
 
 public class TutorialActivity extends ActionBarActivity {
 
     private static final int colorArray[] = {Color.rgb(0, 187, 211),
-            Color.rgb(255, 167, 37),
+            Color.rgb(239, 108, 0),
             Color.rgb(52, 172, 113)
     };
     @InjectView(R.id.pager)
-    ViewPager viewPager;
-    @InjectView(R.id.root)
-    View rlRoot;
+    ViewPagerCustomDuration viewPager;
     @InjectView(R.id.indicator)
-    CircleIndicator circleIndicator;
+    CirclePageIndicator circleIndicator;
     @InjectView(R.id.next_btn)
     View nextBtn;
     @InjectView(R.id.skip_btn)
     View skipBtn;
     @InjectView(R.id.done_btn)
     View doneBtn;
-    private int time;
+    @InjectView(R.id.bg)
+    SmoothBackground bg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tutorial);
         ButterKnife.inject(this);
-        rlRoot.setBackgroundColor(colorArray[0]);
+        bg.setColors(colorArray);
+        viewPager.setScrollDurationFactor(1.6);
         viewPager.setOffscreenPageLimit(2);
         final TutorialPagerAdapter defaultPagerAdapter = new TutorialPagerAdapter(getSupportFragmentManager());
         viewPager.setAdapter(defaultPagerAdapter);
         circleIndicator.setViewPager(viewPager);
         circleIndicator.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
+            private int mScrollState;
+
             @Override
             public void onPageSelected(int position) {
-                super.onPageSelected(position);
+                if (mScrollState == ViewPager.SCROLL_STATE_IDLE) {
+                    bg.onViewPagerPageChanged(position, 0f);
+                }
                 switchSkipAndNextButton(position);
             }
 
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-                time++;
-                if (positionOffset == 0) {
-                    rlRoot.setBackgroundColor(colorArray[position]);
-                } else if (time % 3 == 0) {
-                    rlRoot.setBackgroundColor(blendColors(colorArray[position + 1], colorArray[position], positionOffset));
+                int tabStripChildCount = colorArray.length;
+                if ((tabStripChildCount == 0) || (position < 0) || (position >= tabStripChildCount)) {
+                    return;
                 }
-                super.onPageScrolled(position, positionOffset, positionOffsetPixels);
+                bg.onViewPagerPageChanged(position, positionOffset);
             }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+                mScrollState = state;
+            }
+
         });
+
         viewPager.setPageTransformer(false, new ViewPager.PageTransformer() {
             @Override
             public void transformPage(View view, float position) {
@@ -77,9 +89,15 @@ public class TutorialActivity extends ActionBarActivity {
         });
     }
 
+    @Override
+    protected void onDestroy() {
+        ButterKnife.reset(this);
+        super.onDestroy();
+    }
+
     @OnClick({R.id.skip_btn, R.id.done_btn})
     public void skipClicked() {
-        startActivity(new Intent(this, this.getClass()));
+        startActivity(new Intent(this, TutorialActivity.class));
         finish();
     }
 
