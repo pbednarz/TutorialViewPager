@@ -1,0 +1,73 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:background="@color/abc_search_url_text_pressed">
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="false" />
+
+    <pl.solaris.tutorialviewpager.view.CircleIndicator
+        android:id="@+id/indicator"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/tutorial_bottom_height"
+        android:layout_alignParentBottom="true"
+        android:animateLayoutChanges="false"
+        app:ci_animator="@animator/scale_with_alpha" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1.5dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/tutorial_bottom_height"
+        android:animateLayoutChanges="false"
+        android:background="@color/white_semitransparent_40" />
+
+    <TextView
+        android:id="@+id/done_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/tutorial_bottom_height"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/tutorial_bottom_min_width"
+        android:animateLayoutChanges="true"
+        android:background="@drawable/btn_semi_transparent_selector"
+        android:gravity="center"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:text="@string/done"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium.Inverse"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/skip_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/tutorial_bottom_height"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="@dimen/tutorial_bottom_min_width"
+        android:animateLayoutChanges="true"
+        android:background="@drawable/btn_semi_transparent_selector"
+        android:gravity="center"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:text="@string/skip"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium.Inverse" />
+
+    <ImageView
+        android:id="@+id/next_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/tutorial_bottom_height"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:animateLayoutChanges="true"
+        android:background="@drawable/btn_semi_transparent_selector"
+        android:minWidth="@dimen/tutorial_bottom_min_width"
+        android:scaleType="center"
+        android:src="@drawable/ic_action_next_item" />
+</RelativeLayout>

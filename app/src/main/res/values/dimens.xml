@@ -1,0 +1,4 @@
+<resources>
+    <dimen name="tutorial_bottom_height">64dp</dimen>
+    <dimen name="tutorial_bottom_min_width">42dp</dimen>
+</resources>
