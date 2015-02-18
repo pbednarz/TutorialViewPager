@@ -4,23 +4,23 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.util.AttributeSet;
-import android.view.View;
+import android.widget.LinearLayout;
 
 /**
  * Created by pbednarz on 2015-02-17.
  */
-public class SmoothBackground extends View {
+public class SmoothLinearLayout extends LinearLayout {
 
     private int mSelectedIndicatorColor;
     private int mSelectedPosition;
     private float mSelectionOffset;
     private int[] colors;
 
-    public SmoothBackground(Context context) {
+    public SmoothLinearLayout(Context context) {
         this(context, null);
     }
 
-    public SmoothBackground(Context context, AttributeSet attrs) {
+    public SmoothLinearLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
         setWillNotDraw(false);
         mSelectedIndicatorColor = Color.WHITE;
@@ -58,5 +58,6 @@ public class SmoothBackground extends View {
             mSelectedIndicatorColor = color;
         }
         canvas.drawColor(mSelectedIndicatorColor);
+        super.onDraw(canvas);
     }
 }

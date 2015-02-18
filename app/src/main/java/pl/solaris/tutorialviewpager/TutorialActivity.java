@@ -15,7 +15,7 @@ import com.viewpagerindicator.CirclePageIndicator;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
-import pl.solaris.tutorialviewpager.view.SmoothBackground;
+import pl.solaris.tutorialviewpager.view.SmoothLinearLayout;
 import pl.solaris.tutorialviewpager.view.ViewPagerCustomDuration;
 
 
@@ -36,7 +36,7 @@ public class TutorialActivity extends ActionBarActivity {
     @InjectView(R.id.done_btn)
     View doneBtn;
     @InjectView(R.id.bg)
-    SmoothBackground bg;
+    SmoothLinearLayout bg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,8 +81,8 @@ public class TutorialActivity extends ActionBarActivity {
             public void transformPage(View view, float position) {
                 int pageWidth = view.getWidth();
                 if (position > -1 && position < 1) {
-                    view.findViewById(R.id.image1).setTranslationX((float) (position * 0.1 * pageWidth));
-                    view.findViewById(R.id.image2).setTranslationX((float) (position * 0.2 * pageWidth));
+                    view.findViewById(R.id.image1).setTranslationX((float) (position * 0.2 * pageWidth));
+                    view.findViewById(R.id.image2).setTranslationX((float) (position * 0.3 * pageWidth));
                     view.findViewById(R.id.image3).setTranslationX((float) (position * 0.5 * pageWidth));
                 }
             }
@@ -106,14 +106,6 @@ public class TutorialActivity extends ActionBarActivity {
         if (viewPager.getCurrentItem() < colorArray.length) {
             viewPager.setCurrentItem(viewPager.getCurrentItem() + 1, true);
         }
-    }
-
-    private int blendColors(int color1, int color2, float ratio) {
-        final float inverseRation = 1f - ratio;
-        final int r = (int) ((((color1 >> 16) & 0xFF) * ratio) + (((color2 >> 16) & 0xFF) * inverseRation));
-        final int g = (int) ((((color1 >> 8) & 0xFF) * ratio) + (((color2 >> 8) & 0xFF) * inverseRation));
-        final int b = (int) (((color1 & 0xFF) * ratio) + ((color2 & 0xFF) * inverseRation));
-        return (0xFF << 24) | (r << 16) | (g << 8) | b;
     }
 
     public void switchSkipAndNextButton(int position) {

@@ -18,7 +18,7 @@
         <item name="fillColor">#A0FFFFFF</item>
         <item name="pageColor">#20000000</item>
         <item name="strokeWidth">0dp</item>
-        <item name="radius">6dp</item>
+        <item name="radius">5dp</item>
         <item name="centered">true</item>
         <item name="snap">true</item>
     </style>

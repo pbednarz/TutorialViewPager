@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="@dimen/tutorial_bottom_height">
+    android:layout_height="match_parent">
 
     <ImageView
         android:id="@+id/image1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="left|top"
-        android:layout_marginTop="80dp"
+        android:layout_gravity="left|center_vertical"
+        android:layout_marginTop="0dp"
         android:src="@mipmap/ic_launcher" />
 
     <ImageView
         android:id="@+id/image2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="68dp"
+        android:layout_gravity="left|center_vertical"
+        android:layout_marginLeft="112dp"
+        android:layout_marginTop="20dp"
         android:src="@mipmap/ic_launcher" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"
-        android:maxWidth="220dp"
+        android:layout_gravity="right|center_vertical"
+        android:maxWidth="280dp"
+        android:padding="4dp"
         android:text="dsadasdsadsdsada\n\nsdasdasdsadadsadasdsadsadsadasdasdasdsada"
         android:textColor="#FFF"
         android:textSize="22sp"
@@ -34,8 +34,9 @@
     <ImageView
         android:id="@+id/image3"
         android:layout_width="wrap_content"
-        android:layout_height="238dp"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="4dp"
+        android:layout_height="200dp"
+        android:layout_gravity="left|center_vertical"
+        android:layout_marginLeft="92dp"
+        android:layout_marginTop="20dp"
         android:src="@drawable/ic_phone" />
-</RelativeLayout>
+</FrameLayout>

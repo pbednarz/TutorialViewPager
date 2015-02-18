@@ -36,7 +36,6 @@ public class ViewPagerCustomDuration extends ViewPager {
             scroller.setAccessible(true);
             Field interpolator = viewpager.getDeclaredField("sInterpolator");
             interpolator.setAccessible(true);
-
             mScroller = new ScrollerCustomDuration(getContext(),
                     (Interpolator) interpolator.get(null));
             scroller.set(this, mScroller);
