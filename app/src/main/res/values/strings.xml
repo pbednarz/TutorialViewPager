@@ -4,4 +4,9 @@
     <!--TUTORIAL-->
     <string name="skip">Skip</string>
     <string name="done">Done</string>
+
+    <!-- PAGES -->
+    <string name="page_inbox">&lt;b&gt;Inbox by Gmail - the inbox that works for you.&lt;/b&gt;&lt;br&gt;&lt;br&gt;Inbox by Gmail is a new app from the Gmail team. Inbox is an organized place to get things done and get back to what matters. Bundles keep emails organized.</string>
+    <string name="page_youtube">&lt;b&gt;Youtube - the evolution of online video.&lt;/b&gt;&lt;br&gt;&lt;br&gt;Get the official YouTube app for Android phones and tablets. See what the world is watching — from the hottest music videos to what’s trending in gaming, entertainment, news, and more.</string>
+    <string name="page_chrome">&lt;b&gt;Google Chrome - fast, simple, and secure web browser.&lt;/b&gt;&lt;br&gt;&lt;br&gt;Browse fast on your Android phone and tablet with the Google Chrome browser you love on desktop. Pick up where you left off on your other devices with tab sync, search by voice.</string>
 </resources>

@@ -4,23 +4,24 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.util.AttributeSet;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 
 /**
  * Created by pbednarz on 2015-02-17.
  */
-public class SmoothLinearLayout extends LinearLayout {
+public class SmoothFrameLayout extends FrameLayout {
 
     private int mSelectedIndicatorColor;
     private int mSelectedPosition;
     private float mSelectionOffset;
     private int[] colors;
 
-    public SmoothLinearLayout(Context context) {
+    public SmoothFrameLayout(Context context) {
         this(context, null);
     }
 
-    public SmoothLinearLayout(Context context, AttributeSet attrs) {
+    public SmoothFrameLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
         setWillNotDraw(false);
         mSelectedIndicatorColor = Color.WHITE;

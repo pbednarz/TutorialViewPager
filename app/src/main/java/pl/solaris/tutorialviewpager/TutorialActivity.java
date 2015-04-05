@@ -8,6 +8,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
+import android.util.DisplayMetrics;
 import android.view.View;
 
 import com.viewpagerindicator.CirclePageIndicator;
@@ -15,16 +16,13 @@ import com.viewpagerindicator.CirclePageIndicator;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
-import pl.solaris.tutorialviewpager.view.SmoothLinearLayout;
+import pl.solaris.tutorialviewpager.view.SmoothFrameLayout;
 import pl.solaris.tutorialviewpager.view.ViewPagerCustomDuration;
 
 
 public class TutorialActivity extends ActionBarActivity {
 
-    private static final int colorArray[] = {Color.rgb(0, 187, 211),
-            Color.rgb(239, 108, 0),
-            Color.rgb(52, 172, 113)
-    };
+    private static final int colorArray[] = new int[3];
     @InjectView(R.id.pager)
     ViewPagerCustomDuration viewPager;
     @InjectView(R.id.indicator)
@@ -36,16 +34,20 @@ public class TutorialActivity extends ActionBarActivity {
     @InjectView(R.id.done_btn)
     View doneBtn;
     @InjectView(R.id.bg)
-    SmoothLinearLayout bg;
+    SmoothFrameLayout bg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tutorial);
+        getWindow().setBackgroundDrawable(null);
         ButterKnife.inject(this);
+        colorArray[0] = getResources().getColor(R.color.page_blue);
+        colorArray[1] = getResources().getColor(R.color.page_red);
+        colorArray[2] = getResources().getColor(R.color.page_green);
         bg.setColors(colorArray);
-        viewPager.setScrollDurationFactor(1.6);
-        viewPager.setOffscreenPageLimit(2);
+        viewPager.setScrollDurationFactor(1.7);
+        viewPager.setOffscreenPageLimit(3);
         final TutorialPagerAdapter defaultPagerAdapter = new TutorialPagerAdapter(getSupportFragmentManager());
         viewPager.setAdapter(defaultPagerAdapter);
         circleIndicator.setViewPager(viewPager);
@@ -76,23 +78,20 @@ public class TutorialActivity extends ActionBarActivity {
 
         });
 
+        DisplayMetrics metrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(metrics);
+        final int pageWidth = metrics.widthPixels;
+        final float ratioIcon = 0.3f * (float) pageWidth;
+        final float ratioIconLarge = 0.6f * (float) pageWidth;
         viewPager.setPageTransformer(false, new ViewPager.PageTransformer() {
             @Override
             public void transformPage(View view, float position) {
-                int pageWidth = view.getWidth();
                 if (position > -1 && position < 1) {
-                    view.findViewById(R.id.image1).setTranslationX((float) (position * 0.2 * pageWidth));
-                    view.findViewById(R.id.image2).setTranslationX((float) (position * 0.3 * pageWidth));
-                    view.findViewById(R.id.image3).setTranslationX((float) (position * 0.5 * pageWidth));
+                    view.findViewById(R.id.image_icon).setTranslationX(position * ratioIcon);
+                    view.findViewById(R.id.image_large).setTranslationX(position * ratioIconLarge);
                 }
             }
         });
-    }
-
-    @Override
-    protected void onDestroy() {
-        ButterKnife.reset(this);
-        super.onDestroy();
     }
 
     @OnClick({R.id.skip_btn, R.id.done_btn})
@@ -120,7 +119,7 @@ public class TutorialActivity extends ActionBarActivity {
         }
     }
 
-    public class TutorialPagerAdapter extends FragmentPagerAdapter {
+    public static class TutorialPagerAdapter extends FragmentPagerAdapter {
 
         public TutorialPagerAdapter(FragmentManager fm) {
             super(fm);

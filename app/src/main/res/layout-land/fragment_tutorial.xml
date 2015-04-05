@@ -1,42 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/image1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="left|center_vertical"
-        android:layout_marginTop="0dp"
-        android:src="@mipmap/ic_launcher" />
-
-    <ImageView
-        android:id="@+id/image2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="left|center_vertical"
-        android:layout_marginLeft="112dp"
-        android:layout_marginTop="20dp"
-        android:src="@mipmap/ic_launcher" />
-
     <TextView
+        tools:text="@string/page_chrome"
+        style="@style/Base.TextAppearance.AppCompat.Medium.Inverse"
+        android:id="@+id/text_description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="right|center_vertical"
-        android:maxWidth="280dp"
-        android:padding="4dp"
-        android:text="dsadasdsadsdsada\n\nsdasdasdsadadsadasdsadsadsadasdasdasdsada"
-        android:textColor="#FFF"
-        android:textSize="22sp"
-        android:textStyle="bold" />
+        android:maxWidth="300dp"
+        android:padding="4dp" />
 
     <ImageView
-        android:id="@+id/image3"
+        android:id="@+id/image_large"
         android:layout_width="wrap_content"
-        android:layout_height="200dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="left|center_vertical"
         android:layout_marginLeft="92dp"
         android:layout_marginTop="20dp"
-        android:src="@drawable/ic_phone" />
+        android:src="@drawable/ic_chrome_large" />
+
+    <ImageView
+        android:id="@+id/image_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left|center_vertical"
+        android:layout_marginLeft="128dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/ic_chrome" />
 </FrameLayout>

@@ -1,38 +1,32 @@
-<pl.solaris.tutorialviewpager.view.SmoothLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<pl.solaris.tutorialviewpager.view.SmoothFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/bg"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:animateLayoutChanges="true"
-    android:background="@color/abc_search_url_text_pressed"
     android:orientation="vertical">
 
     <pl.solaris.tutorialviewpager.view.ViewPagerCustomDuration
         android:id="@+id/pager"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:animateLayoutChanges="false" />
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/tutorial_bottom_height" />
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/tutorial_bottom_height"
         android:layout_gravity="bottom"
-        android:animateLayoutChanges="true"
         android:background="@color/black_semitransparent_10">
 
         <com.viewpagerindicator.CirclePageIndicator
             android:id="@+id/indicator"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:animateLayoutChanges="false" />
+            android:layout_gravity="center" />
 
         <TextView
             android:id="@+id/done_btn"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="right"
-            android:animateLayoutChanges="true"
             android:background="@drawable/btn_semi_transparent_selector"
             android:gravity="center"
             android:paddingLeft="8dp"
@@ -46,7 +40,6 @@
             android:layout_width="wrap_content"
             android:layout_height="@dimen/tutorial_bottom_height"
             android:layout_gravity="left"
-            android:animateLayoutChanges="true"
             android:background="@drawable/btn_semi_transparent_selector"
             android:gravity="center"
             android:paddingLeft="@dimen/tutorial_bottom_min_width"
@@ -59,10 +52,9 @@
             android:layout_width="wrap_content"
             android:layout_height="@dimen/tutorial_bottom_height"
             android:layout_gravity="right"
-            android:animateLayoutChanges="true"
             android:background="@drawable/btn_semi_transparent_selector"
             android:minWidth="@dimen/tutorial_bottom_min_width"
             android:scaleType="center"
             android:src="@drawable/ic_action_next_item" />
     </FrameLayout>
-</pl.solaris.tutorialviewpager.view.SmoothLinearLayout>
+</pl.solaris.tutorialviewpager.view.SmoothFrameLayout>
