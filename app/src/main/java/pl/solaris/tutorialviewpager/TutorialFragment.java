@@ -15,7 +15,6 @@ public class TutorialFragment extends Fragment {
     public static final String ARGS_POSITION = "TutorialFragment:POSITION";
     private int position = -1;
 
-    ImageView ivIcon;
     ImageView ivIconLarge;
     TextView tvDescription;
 
@@ -40,7 +39,6 @@ public class TutorialFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_tutorial, container, false);
-        ivIcon = (ImageView) view.findViewById(R.id.image_icon);
         ivIconLarge = (ImageView) view.findViewById(R.id.image_large);
         tvDescription = (TextView) view.findViewById(R.id.text_description);
         return view;
@@ -51,20 +49,15 @@ public class TutorialFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         switch (position) {
             case 0:
-                tvDescription.setText(Html.fromHtml(getString(R.string.page_inbox)));
-                ivIcon.setImageDrawable(getResources().getDrawable(R.drawable.ic_inbox));
-                ivIconLarge.setImageDrawable(getResources().getDrawable(R.drawable.ic_inbox_large));
+                tvDescription.setText(Html.fromHtml(getString(R.string.page_android)));
+                ivIconLarge.setImageDrawable(getResources().getDrawable(R.drawable.ic_android_large));
                 break;
             case 1:
-                tvDescription.setText(Html.fromHtml(getString(R.string.page_youtube)));
-                ivIcon.setImageDrawable(getResources().getDrawable(R.drawable.ic_youtube));
-                ivIconLarge.setImageDrawable(getResources().getDrawable(R.drawable.ic_youtube_large));
+                tvDescription.setText(Html.fromHtml(getString(R.string.page_ubuntu)));
+                ivIconLarge.setImageDrawable(getResources().getDrawable(R.drawable.ic_ubuntu_large));
                 break;
             default:
-                tvDescription.setText(Html.fromHtml(getString(R.string.page_chrome)));
-                // Icons already set in inflated layout
-                //ivIcon.setImageDrawable(getResources().getDrawable(R.drawable.ic_chrome));
-                //ivIconLarge.setImageDrawable(getResources().getDrawable(R.drawable.ic_chrome_large));
+                tvDescription.setText(Html.fromHtml(getString(R.string.page_firefox)));
                 break;
         }
     }
@@ -72,7 +65,6 @@ public class TutorialFragment extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        ivIcon = null;
         ivIconLarge = null;
         tvDescription = null;
     }

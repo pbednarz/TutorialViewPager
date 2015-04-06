@@ -1,12 +1,12 @@
 <resources>
-    <string name="app_name">TutorialViewPager</string>
+    <string name="app_name">Mobile OS - demo</string>
 
     <!--TUTORIAL-->
     <string name="skip">Skip</string>
     <string name="done">Done</string>
 
     <!-- PAGES -->
-    <string name="page_inbox">&lt;b&gt;Inbox by Gmail - the inbox that works for you.&lt;/b&gt;&lt;br&gt;&lt;br&gt;Inbox by Gmail is a new app from the Gmail team. Inbox is an organized place to get things done and get back to what matters. Bundles keep emails organized.</string>
-    <string name="page_youtube">&lt;b&gt;Youtube - the evolution of online video.&lt;/b&gt;&lt;br&gt;&lt;br&gt;Get the official YouTube app for Android phones and tablets. See what the world is watching — from the hottest music videos to what’s trending in gaming, entertainment, news, and more.</string>
-    <string name="page_chrome">&lt;b&gt;Google Chrome - fast, simple, and secure web browser.&lt;/b&gt;&lt;br&gt;&lt;br&gt;Browse fast on your Android phone and tablet with the Google Chrome browser you love on desktop. Pick up where you left off on your other devices with tab sync, search by voice.</string>
+    <string name="page_android">&lt;b&gt;Android&lt;/b&gt;&lt;br&gt;&lt;br&gt;Android is a mobile operating system (OS) based on the Linux kernel and currently developed by Google. Android is designed primarily for touchscreen mobile devices such as smartphones and tablet computers.</string>
+    <string name="page_firefox">&lt;b&gt;Firefox OS.&lt;/b&gt;&lt;br&gt;&lt;br&gt;It is a Linux kernel-based open-source operating system for smartphones and tablet computers and is set to be used on smart TVs. It is being developed by Mozilla, the non-profit organization best known for the Firefox web browser.</string>
+    <string name="page_ubuntu">&lt;b&gt;Ubuntu Touch.&lt;/b&gt;&lt;br&gt;&lt;br&gt;Also known as Ubuntu Phone. It is a mobile version of the Ubuntu operating system developed by Canonical UK Ltd and Ubuntu Community. It is designed primarily for touchscreen mobile devices such as smartphones and tablet computers.</string>
 </resources>

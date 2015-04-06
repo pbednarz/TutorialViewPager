@@ -5,7 +5,7 @@
     android:layout_height="match_parent">
 
     <TextView
-        tools:text="@string/page_chrome"
+        tools:text="@string/page_ubuntu"
         style="@style/Base.TextAppearance.AppCompat.Medium.Inverse"
         android:id="@+id/text_description"
         android:layout_width="wrap_content"
@@ -21,14 +21,5 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="12dp"
-        android:src="@drawable/ic_chrome_large" />
-
-    <ImageView
-        android:id="@+id/image_icon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="right"
-        android:layout_marginTop="148dp"
-        android:layout_marginRight="48dp"
-        android:src="@drawable/ic_chrome" />
+        android:src="@drawable/ic_firefox_large" />
 </FrameLayout>

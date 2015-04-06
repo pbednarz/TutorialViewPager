@@ -81,13 +81,11 @@ public class TutorialActivity extends ActionBarActivity {
         DisplayMetrics metrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(metrics);
         final int pageWidth = metrics.widthPixels;
-        final float ratioIcon = 0.3f * (float) pageWidth;
         final float ratioIconLarge = 0.6f * (float) pageWidth;
         viewPager.setPageTransformer(false, new ViewPager.PageTransformer() {
             @Override
             public void transformPage(View view, float position) {
                 if (position > -1 && position < 1) {
-                    view.findViewById(R.id.image_icon).setTranslationX(position * ratioIcon);
                     view.findViewById(R.id.image_large).setTranslationX(position * ratioIconLarge);
                 }
             }
