@@ -5,7 +5,7 @@ Demo application using ViewPager and sweet smooth background changing color. The
 
 The demos was inspired by Google Drive application and Google Calendar.
 
-Google Play Store: https://play.google.com/store/apps/details?id=pl.solaris.tutorialviewpager
+Demo version: [app-release.apk](app-release.apk)
 
 ## Landscape
 [![LANDSCAPE](http://img.youtube.com/vi/46pm21kYtdU/0.jpg)](http://www.youtube.com/watch?v=46pm21kYtdU)
